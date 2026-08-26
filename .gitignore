@@ -1,0 +1,3 @@
+scripts/sync-release.ps1
+scripts/.cache/
+sync-release.bat

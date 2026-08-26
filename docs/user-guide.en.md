@@ -2,7 +2,7 @@
 
 [中文](user-guide.zh-CN.md) · [Back to README](../README.md)
 
-![Overview](assets/hero-overview.svg)
+![Overview](assets/en/hero-overview.svg)
 
 **DSHHelper** runs multiple **isolated** DeepSeek Harness (dsh) workspaces on one computer. It bundles Node.js and dsh, supports **quad-pane layouts**, and lets you ship configured environments as **`.dshpack`** packages.
 
@@ -68,7 +68,7 @@ When the wizard finishes, your first instance appears in the sidebar. Double-cli
 
 ## Multi-instance & quad-pane
 
-![Multi-instance diagram](assets/multi-instance.en.svg)
+![Multi-instance diagram](assets/en/multi-instance.svg)
 
 DSHHelper’s main value is **several dsh environments in one window**, each with its own process and data.
 
@@ -101,7 +101,7 @@ This affects the **DSHHelper shell** (sidebar, tabs, settings) only — **not** 
 
 ## Packages (.dshpack)
 
-![Package flow](assets/dshpack-flow.svg)
+![Package flow](assets/en/dshpack-flow.svg)
 
 A **`.dshpack`** file packages presets, patches, settings, and related configuration so you can distribute a ready-to-use workspace.
 

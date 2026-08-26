@@ -2,7 +2,7 @@
 
 [English](user-guide.en.md) · [返回首页](../README.zh-CN.md)
 
-![产品概览](assets/hero-overview.svg)
+![产品概览](assets/zh-CN/hero-overview.svg)
 
 DSHHelper 帮助你在单台电脑上**多开、隔离**运行多套 DeepSeek Harness（dsh）工作间，内置 Node.js 与 dsh 运行时，并支持通过 **`.dshpack` 制品**打包与分发已配置好的环境。
 
@@ -69,7 +69,7 @@ DSHHelper 帮助你在单台电脑上**多开、隔离**运行多套 DeepSeek Ha
 
 ## 多开与四分屏
 
-![多实例示意](assets/multi-instance.zh-CN.svg)
+![多实例示意](assets/zh-CN/multi-instance.svg)
 
 DSHHelper 的核心能力是**同一窗口内并行运行多个实例**，互不共享进程与数据目录。
 
@@ -104,7 +104,7 @@ DSHHelper 的核心能力是**同一窗口内并行运行多个实例**，互不
 
 ## 制品（.dshpack）
 
-![制品流程](assets/dshpack-flow.svg)
+![制品流程](assets/zh-CN/dshpack-flow.svg)
 
 `.dshpack` 是 DSHHelper 的**环境制品**格式，用于打包预设、补丁、设置等，便于在团队或客户间分发「配好的」工作间。
 

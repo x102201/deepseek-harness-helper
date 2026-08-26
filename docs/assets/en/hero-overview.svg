@@ -4,13 +4,13 @@
   <!-- dsh-helper icon · E-sea-1 -->
   <g transform="translate(28,52)">
     <defs>
-      <linearGradient id="hero-Esea1" x1="0" y1="0" x2="1" y2="1">
+      <linearGradient id="hero-Esea1-en" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0" stop-color="#6CA6FF"/>
         <stop offset="1" stop-color="#1D4ED8"/>
       </linearGradient>
     </defs>
     <g transform="scale(1.5)">
-      <rect x="1" y="1" width="62" height="62" rx="15.5" fill="url(#hero-Esea1)"/>
+      <rect x="1" y="1" width="62" height="62" rx="15.5" fill="url(#hero-Esea1-en)"/>
       <path d="M6 49 Q18 43 32 49 T58 49" stroke="#ffffff" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0.92"/>
       <path d="M8 55 Q22 49 36 55 T60 55" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.58"/>
       <g transform="translate(11.15 13.88) scale(1.561)" fill="#ffffff">

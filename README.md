@@ -2,7 +2,7 @@
 
 [中文](README.zh-CN.md) · [User Guide (EN)](docs/user-guide.en.md) · [用户指南 (ZH)](docs/user-guide.zh-CN.md)
 
-![Overview](docs/assets/hero-overview.svg)
+![Overview](docs/assets/en/hero-overview.svg)
 
 **DSHHelper** is a desktop app for running **multiple isolated DeepSeek Harness (dsh) workspaces** on one machine. It ships a built-in Node.js + dsh runtime, supports **quad-pane layouts**, and lets you **export / import** configured environments as `.dshpack` packages.
 

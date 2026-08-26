@@ -2,7 +2,7 @@
 
 [English](README.md) · [用户指南 (ZH)](docs/user-guide.zh-CN.md) · [User Guide (EN)](docs/user-guide.en.md)
 
-![产品概览](docs/assets/hero-overview.svg)
+![产品概览](docs/assets/zh-CN/hero-overview.svg)
 
 **DSHHelper** 是一款桌面应用，用于在同一台电脑上**多开、互不干扰**地运行多套 DeepSeek Harness（dsh）工作间。内置 Node.js + dsh 运行时，支持**四分屏窗格布局**，并可通过 **`.dshpack` 制品**导出、分发已配置好的环境。
 

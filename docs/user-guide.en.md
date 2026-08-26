@@ -68,8 +68,6 @@ When the wizard finishes, your first instance appears in the sidebar. Double-cli
 
 ## Multi-instance & quad-pane
 
-![Multi-instance diagram](assets/en/multi-instance.svg)
-
 DSHHelper’s main value is **several dsh environments in one window**, each with its own process and data.
 
 ### Basics

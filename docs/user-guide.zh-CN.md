@@ -69,8 +69,6 @@ DSHHelper 帮助你在单台电脑上**多开、隔离**运行多套 DeepSeek Ha
 
 ## 多开与四分屏
 
-![多实例示意](assets/zh-CN/multi-instance.svg)
-
 DSHHelper 的核心能力是**同一窗口内并行运行多个实例**，互不共享进程与数据目录。
 
 ### 基本操作

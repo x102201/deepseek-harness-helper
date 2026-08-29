@@ -16,28 +16,20 @@
 
 ### 痛点
 
-| 你想做的 | 现实 |
-|----------|------|
-| 微信卖货接待 + 售后跟单 + 写代码，**同时跑** | 默认只有 **一套** 工作空间（一份 `DSH_HOME`） |
-| 每套活只用自己的插件 | 插件全堆进同一套 → 工具膨胀 → AI 选错工具 → **越装越废** |
-| 用 Agent 预设切换「当前能力」 | **一次会话只能挂一套**预设；开过一轮再换会被锁 |
+你想一边微信卖货接待，一边售后跟单，一边还开着写代码——**三套活同时转**。
 
-![痛点](docs/assets/zh-CN/dsh-model.svg)
+可默认只有一套 dsh（一份 `DSH_HOME`）。插件全往里塞，工具列表越来越长，AI 反而选错工具、**越装越废**。Agent 预设想「切能力」也救不了：**一次会话只能挂一套**，开过一轮再换还会被锁。([依据](https://deepseekdocs.com/en/docs/features/persona) · [设计原文](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/implemented/architecture/2026-08-03-per-session-agent-presets.md))
 
-依据：[Agent 预设说明](https://deepseekdocs.com/en/docs/features/persona) · [设计原文](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/implemented/architecture/2026-08-03-per-session-agent-presets.md)
-
-**要并行多套定向能力，就要并行多套 dsh——不是在一个 dsh 里硬塞。**
+两套定向能力挤在一个工作空间里，不是调一调的事，是**结构上装不下**。
 
 ### 解法
 
-DSHHelper 在同一窗口里管理多个实例。  
-**实例 ≠ 标签页。实例 = 独立进程 + 独立端口 + 独立 `DSH_HOME` = 完整的一套 dsh。**
+不要在一个 dsh 里硬塞。  
+**每个实例 = 一整套独立的 dsh**（独立进程、独立端口、独立 `DSH_HOME`），不是同一个窗口里的标签页。
 
-![解法](docs/assets/zh-CN/helper-model.svg)
+左边卖货接待、右边售后跟单、下面写代码——要几套就开几套，插件互不踩。
 
 ![四分屏实机](docs/assets/zh-CN/screenshot-main-light.png)
-
-左边微信卖货接待、右边售后跟单、下面写代码——三套 dsh 并排跑，插件互不污染。
 
 ---
 

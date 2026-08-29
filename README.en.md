@@ -16,28 +16,20 @@
 
 ### Pain
 
-| You want | Reality |
-|----------|---------|
-| WeChat sales desk + after-sales + coding **at once** | Default is **one** workspace (one `DSH_HOME`) |
-| Each job keeps its own plugins | Everything piles into one home → tool bloat → AI picks wrong tools → **worse as you add more** |
-| Switch capability with Agent presets | **One preset per session**; switch after a turn is locked |
+You want WeChat sales, after-sales follow-up, and coding **all running at once**.
 
-![Pain](docs/assets/en/dsh-model.svg)
+Out of the box you get one dsh (one `DSH_HOME`). Stuff every plugin into it and the tool list balloons — the model picks the wrong tools, and it gets **worse the more you add**. Agent presets do not save you: **only one mounts per session**, and switching after a turn is locked. ([docs](https://deepseekdocs.com/en/docs/features/persona) · [design note](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/implemented/architecture/2026-08-03-per-session-agent-presets.md))
 
-Sources: [Agent presets](https://deepseekdocs.com/en/docs/features/persona) · [design note](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/implemented/architecture/2026-08-03-per-session-agent-presets.md)
-
-**Parallel directed work needs parallel dsh — not one overloaded home.**
+Two directed jobs in one workspace is not a tuning problem — **structurally, it does not fit**.
 
 ### Fix
 
-DSHHelper runs many instances in one window.  
-**An instance is not a tab. Instance = own process + own port + own `DSH_HOME` = a complete dsh.**
+Stop forcing everything into one dsh.  
+**Each instance = one full, separate dsh** (own process, port, and `DSH_HOME`) — not a tab inside a single runtime.
 
-![Fix](docs/assets/en/helper-model.svg)
+Sales desk on the left, after-sales on the right, coding below — open as many as you need; plugins never mix.
 
 ![Quad-pane](docs/assets/en/screenshot-main-light.png)
-
-WeChat sales on the left, after-sales on the right, coding below — three dsh runtimes side by side, plugins never mix.
 
 ---
 

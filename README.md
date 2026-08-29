@@ -4,11 +4,9 @@
 
 **一个桌面窗口里，同时跑任意多个互不干扰的 DeepSeek Harness。每个实例 = 一整套独立的 dsh。**
 
-<video controls autoplay muted loop playsinline poster="docs/assets/zh-CN/screenshot-main-light.png" width="720">
-  <source src="docs/assets/video/dsh-helper-demo.mp4" type="video/mp4" />
-</video>
+![演示](docs/assets/video/dsh-helper-demo.gif)
 
-[▶ 观看演示（若上方未自动播放）](docs/assets/video/dsh-helper-demo.mp4)
+[下载完整演示视频（mp4）](docs/assets/video/dsh-helper-demo.mp4)
 
 ---
 
@@ -18,7 +16,9 @@
 
 你想一边微信卖货接待，一边售后跟单，一边还开着写代码——**三套活同时转**。
 
-可默认只有一套 dsh（一份 `DSH_HOME`）。插件全往里塞，工具列表越来越长，AI 反而选错工具、**越装越废**。Agent 预设想「切能力」也救不了：**一次会话只能挂一套**，开过一轮再换还会被锁。([依据](https://deepseekdocs.com/en/docs/features/persona) · [设计原文](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/implemented/architecture/2026-08-03-per-session-agent-presets.md))
+可默认只有一套 dsh（一份 `DSH_HOME`）。插件全往里塞，工具列表越来越长，AI 反而选错工具、**越装越废**。Agent 预设想「切能力」也救不了：**一次会话只能挂一套**，开过一轮再换还会被锁。
+
+> 依据 DeepSeek Harness：[《Agent Presets and Personas》](https://deepseekdocs.com/en/docs/features/persona) · [架构说明《A session's agent is composed from a preset》](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/implemented/architecture/2026-08-03-per-session-agent-presets.md)
 
 两套定向能力挤在一个工作空间里，不是调一调的事，是**结构上装不下**。
 

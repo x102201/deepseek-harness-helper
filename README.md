@@ -1,60 +1,63 @@
-# DSHHelper — 一任务一实例的 DeepSeek Harness 桌面助手
+# DSHHelper — 一台电脑，无限多开 dsh
 
 [English](README.en.md) · [用户指南](docs/user-guide.zh-CN.md) · [Releases](https://github.com/x102201/deepseek-harness-helper/releases)
 
-**每个定向任务一个实例，每个实例只留固定插件集合；需要并行就并排开。**
+**一个桌面窗口里，同时跑任意多个互不干扰的 DeepSeek Harness。每个实例 = 一整套独立的 dsh。**
 
-<video controls poster="docs/assets/zh-CN/screenshot-main-light.png" width="720">
+<video controls autoplay muted loop playsinline poster="docs/assets/zh-CN/screenshot-main-light.png" width="720">
   <source src="docs/assets/video/dsh-helper-demo.mp4" type="video/mp4" />
 </video>
 
-[▶ 观看演示视频](docs/assets/video/dsh-helper-demo.mp4)
+[▶ 观看演示（若上方未自动播放）](docs/assets/video/dsh-helper-demo.mp4)
 
 ---
 
-## 一个工作空间里装太多插件会怎样
+## 一、自己用：一套 dsh 装不下两套活 → 一实例一套 dsh
 
-在 DeepSeek Harness（dsh）里，一个工作空间可以不停装插件；也可以用 **Agent 预设** 圈定「当前这套」插件与人设。但这两件事叠在一起，很容易把自己绕进去。
+### 痛点
 
-![dsh 默认模型](docs/assets/zh-CN/dsh-model.svg)
+| 你想做的 | 现实 |
+|----------|------|
+| 微信卖货接待 + 售后跟单 + 写代码，**同时跑** | 默认只有 **一套** 工作空间（一份 `DSH_HOME`） |
+| 每套活只用自己的插件 | 插件全堆进同一套 → 工具膨胀 → AI 选错工具 → **越装越废** |
+| 用 Agent 预设切换「当前能力」 | **一次会话只能挂一套**预设；开过一轮再换会被锁 |
 
-### 官方机制（原文要点）
+![痛点](docs/assets/zh-CN/dsh-model.svg)
 
-- **Agent 预设 = 该 Agent 的完整能力组合**（工具、人设、prompt sections），载体是一份 `agent.cordis.yml`。
-- **一次会话只能挂载一套预设**；兄弟预设互相听不见（sibling presets stay deaf）。
-- 开过一轮之后再换预设会被锁住（`agent-preset-locked`），因为两套组合不能同时注册进同一层。
+依据：[Agent 预设说明](https://deepseekdocs.com/en/docs/features/persona) · [设计原文](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/implemented/architecture/2026-08-03-per-session-agent-presets.md)
 
-依据：[Agent Presets and Personas](https://deepseekdocs.com/en/docs/features/persona) · [per-session agent-presets 设计说明](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/implemented/architecture/2026-08-03-per-session-agent-presets.md)
+**要并行多套定向能力，就要并行多套 dsh——不是在一个 dsh 里硬塞。**
 
-### 亲身踩过的坑
+### 解法
 
-插件装进的是**这个工作空间**。装多了就乱——工具列表膨胀，模型选不准该用哪个，能力反而下降。预设只能切「这一次对话的组合」，切不掉已经堆在工作空间里的混乱，更没法让「微信自动回复」和「帮我买东西」两套定向能力**同时、互不干扰**地跑。
+DSHHelper 在同一窗口里管理多个实例。  
+**实例 ≠ 标签页。实例 = 独立进程 + 独立端口 + 独立 `DSH_HOME` = 完整的一套 dsh。**
 
----
-
-## DSHHelper 怎么解
-
-把「定向任务」拆成独立实例：每一个任务一个实例，每一个实例只保留固定的插件集合。要并行，就并排开。
-
-![DSHHelper 模型](docs/assets/zh-CN/helper-model.svg)
+![解法](docs/assets/zh-CN/helper-model.svg)
 
 ![四分屏实机](docs/assets/zh-CN/screenshot-main-light.png)
 
+左边微信卖货接待、右边售后跟单、下面写代码——三套 dsh 并排跑，插件互不污染。
+
 ---
 
-## 调好的环境，怎么卖给别人
+## 二、拿去卖：辛苦跑通了，却交不出去、卖不出去
 
-我用 dsh 接好了微信自动沟通回复，还能帮忙买东西——一套已经跑通的自动化流程。别人想买这套能力。可工作空间里插件太多，连自己过一段时间也说不清「到底哪几个插件、哪份预设、哪段配置才是这套流程」；为了交付，又折腾了很久才勉强复原。
+花了好几天，才把微信自动沟通卖货跑通——插件、预设、话术、流程一点点调对。
 
-现在有了 **`.dshpack` 制品**：在 Helper 里把这个**已经调好的实例**导出成一个文件。对方导入后得到的是能直接交互的同一套工作间，不是一份说明书。可以按设备机器码 / 密码限制使用范围，也可以禁止再转手。
+然后有人要买。真正卡住的不是「会不会用」，而是**每次卖都像再做一遍工程**：
+
+1. **复原不了** — 过几天连自己都说不清哪几个插件、哪份预设才是「这一套」；给客户装，装完对不上，又耗掉几天  
+2. **交不出去** — 写说明书客户装不全；把目录打包又怕白嫖转卖  
+3. **卖不了多个** — 第二个、第三个客户还要再远程折腾一遍，**交付时间远大于调功能的时间**，规模化卖不出去
+
+**`.dshpack`：** 把已经调好的那一个卖货实例（一整套 dsh）打成文件。客户导入即用；可绑机器码 / 密码，可禁止再导出——你卖的是成品，不是陪装服务。
 
 ![制品流程](docs/assets/zh-CN/dshpack-flow.svg)
 
 ---
 
 ## 用户指南
-
-安装、向导、多开、制品导入导出与排错，按章节阅读：
 
 1. [概念](docs/user-guide.zh-CN.md#概念)
 2. [安装](docs/user-guide.zh-CN.md#安装)

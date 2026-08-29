@@ -21,7 +21,7 @@ For people who already have an installer: install, multi-instance, and package i
 
 | Term | Meaning |
 |------|---------|
-| **Instance** | One isolated DeepSeek Harness workspace: own process, port, and data (`DSH_HOME`) |
+| **Instance** | **One full, separate dsh**: own process, port, and data (`DSH_HOME`) — not a tab inside a single dsh |
 | **Runtime** | The Node.js + dsh version for that instance; downloaded to a local cache, then materialized into the instance |
 | **Package (.dshpack)** | An export of a tuned instance; import restores an interactive workspace on the current OS |
 | **Agent preset** | A full capability composition inside dsh (tools / persona); still managed in the instance’s dsh UI |

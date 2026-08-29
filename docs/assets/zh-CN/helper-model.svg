@@ -1,25 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" fill="none">
-  <rect width="720" height="300" rx="12" fill="#f8fafc"/>
-  <rect x="1" y="1" width="718" height="298" rx="11" stroke="#e2e8f0"/>
-  <text x="24" y="36" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15" font-weight="700" fill="#0f172a">DSHHelper：一任务一实例</text>
-  <text x="24" y="56" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#64748b">每个实例独立进程与 DSH_HOME · 只留本任务插件 · 可并排运行</text>
-  <rect x="24" y="72" width="672" height="168" rx="10" fill="#fff" stroke="#93c5fd"/>
-  <text x="40" y="96" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">DSHHelper 窗口</text>
-  <rect x="40" y="112" width="200" height="108" rx="8" fill="#eff6ff" stroke="#60a5fa"/>
-  <text x="140" y="138" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#1e40af">实例 A</text>
-  <text x="140" y="160" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#1d4ed8">微信自动回复</text>
-  <text x="140" y="182" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#64748b">固定插件集</text>
-  <text x="140" y="202" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#94a3b8">独立 DSH_HOME</text>
-  <rect x="260" y="112" width="200" height="108" rx="8" fill="#fff7ed" stroke="#fb923c"/>
-  <text x="360" y="138" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#c2410c">实例 B</text>
-  <text x="360" y="160" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#ea580c">帮忙买东西</text>
-  <text x="360" y="182" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#64748b">固定插件集</text>
-  <text x="360" y="202" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#94a3b8">独立 DSH_HOME</text>
-  <rect x="480" y="112" width="200" height="108" rx="8" fill="#ecfdf5" stroke="#34d399"/>
-  <text x="580" y="138" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#047857">实例 C</text>
-  <text x="580" y="160" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" fill="#059669">写代码</text>
-  <text x="580" y="182" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#64748b">固定插件集</text>
-  <text x="580" y="202" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#94a3b8">独立 DSH_HOME</text>
-  <rect x="24" y="256" width="672" height="28" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
-  <text x="360" y="275" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">要并行 → 并排开 · 要交付 → 导出 .dshpack · 进程隔离互不踩踏</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" fill="none">
+  <rect width="720" height="280" rx="12" fill="#f8fafc"/>
+  <rect x="1" y="1" width="718" height="278" rx="11" stroke="#e2e8f0"/>
+  <text x="360" y="28" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14" font-weight="700" fill="#0f172a">DSHHelper：N 个实例 = N 套独立的 dsh</text>
+  <rect x="16" y="44" width="688" height="188" rx="10" fill="#fff" stroke="#93c5fd"/>
+  <text x="32" y="68" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" font-weight="600" fill="#1d4ed8">同一桌面窗口（可无限新建）</text>
+
+  <rect x="32" y="84" width="200" height="128" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="132" y="108" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#1e40af">实例 A = 一套 dsh</text>
+  <text x="132" y="130" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#1d4ed8">微信卖货接待</text>
+  <text x="132" y="152" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#64748b">独立进程 · 独立端口</text>
+  <text x="132" y="172" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#64748b">独立 DSH_HOME</text>
+  <text x="132" y="194" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#94a3b8">只装卖货接待插件</text>
+
+  <rect x="260" y="84" width="200" height="128" rx="8" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+  <text x="360" y="108" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#c2410c">实例 B = 一套 dsh</text>
+  <text x="360" y="130" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#ea580c">售后跟单</text>
+  <text x="360" y="152" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#64748b">独立进程 · 独立端口</text>
+  <text x="360" y="172" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#64748b">独立 DSH_HOME</text>
+  <text x="360" y="194" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#94a3b8">只装售后相关插件</text>
+
+  <rect x="488" y="84" width="200" height="128" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="588" y="108" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="700" fill="#047857">实例 C = 一套 dsh</text>
+  <text x="588" y="130" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="11" fill="#059669">写代码</text>
+  <text x="588" y="152" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#64748b">独立进程 · 独立端口</text>
+  <text x="588" y="172" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#64748b">独立 DSH_HOME</text>
+  <text x="588" y="194" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#94a3b8">只装编码相关插件</text>
+
+  <text x="360" y="260" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">三套 dsh 并排跑 · 互不踩踏 · 需要几个就新建几个</text>
 </svg>

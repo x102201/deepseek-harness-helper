@@ -60,12 +60,14 @@ Installers are on [GitHub Releases](https://github.com/x102201/deepseek-harness-
 2. Run the installer
 3. Launch **DSHHelper** from the Start menu or desktop shortcut
 
+If SmartScreen says the app is blocked / from an unknown publisher: **More info** → **Run anyway** (builds from this repo’s Releases are not code-signed).
+
 ### macOS
 
 1. Open the `.dmg` and drag **DSHHelper** into Applications
-2. If Gatekeeper blocks it: right-click → **Open**, or allow under System Settings → Privacy & Security
+2. If macOS says the developer cannot be verified: right-click → **Open**, or allow under System Settings → Privacy & Security
 
-> macOS builds are not notarized yet; this is expected.
+Current builds are not signed or notarized with an Apple Developer certificate (expected without a paid developer account).
 
 ### Linux
 
@@ -101,7 +103,7 @@ Create an instance for each directed task, and **install only that task’s plug
 1. Sidebar → **New instance**
 2. Start the instance if needed → **double-click to open the workbench** (or drag into the work area)
 3. Drag a tab to a **window edge** to split; drop into another pane to **merge**
-4. A common layout is a **2×2 quad-pane**
+4. Drag tabs to window edges to split / merge freely (e.g. side-by-side, **2×2**, …)
 
 ![Quad-pane — light](assets/en/screenshot-main-light.png)
 
@@ -206,7 +208,8 @@ Uninstalling DSHHelper **does not** remove the data directory. Delete `.dshHelpe
 |---------|------------|
 | First start of a version is slow | Expected: dependency install often 1–3 minutes; later starts are faster |
 | Start failed / unclean exit | Check instance Details logs; crash recovery reconciles leftover processes and ports |
-| macOS “unidentified developer” | Right-click → Open, or allow in System Settings; see [Install · macOS](#macos) |
+| macOS “unidentified developer” | Right-click → Open, or allow in System Settings; see [Install · macOS](#macos) (unsigned / not notarized) |
+| Windows SmartScreen / unknown publisher | **More info** → **Run anyway**; see [Install · Windows](#windows) |
 | Machine code mismatch (E-20) | Confirm the export bound this device’s code; after a board change, re-authorize |
 | Cannot export again (E-23) | Instance came from a forbid-re-export package; expected |
 | Trust step blocked | You must confirm trust; only import packages you accept |

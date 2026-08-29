@@ -29,7 +29,7 @@
 
 左边卖货接待、右边售后跟单、下面写代码——要几套就开几套，插件互不踩。
 
-![四分屏实机](docs/assets/zh-CN/screenshot-main-light.png)
+![分屏实机](docs/assets/zh-CN/screenshot-main-light.png)
 
 ---
 

@@ -29,7 +29,7 @@ Stop forcing everything into one dsh.
 
 Sales desk on the left, after-sales on the right, coding below — open as many as you need; plugins never mix.
 
-![Quad-pane](docs/assets/en/screenshot-main-light.png)
+![Split layout](docs/assets/en/screenshot-main-light.png)
 
 ---
 

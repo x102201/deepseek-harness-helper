@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" fill="none">
+  <rect width="720" height="300" rx="12" fill="#f8fafc"/>
+  <rect x="1" y="1" width="718" height="298" rx="11" stroke="#e2e8f0"/>
+  <text x="24" y="36" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0f172a">DSHHelper: one task, one instance</text>
+  <text x="24" y="56" font-family="Segoe UI, sans-serif" font-size="12" fill="#64748b">Each instance has its own process and DSH_HOME · fixed plugin set · run side by side</text>
+
+  <rect x="24" y="72" width="672" height="168" rx="10" fill="#fff" stroke="#93c5fd"/>
+  <text x="40" y="96" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">DSHHelper window</text>
+
+  <rect x="40" y="112" width="200" height="108" rx="8" fill="#eff6ff" stroke="#60a5fa"/>
+  <text x="140" y="138" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#1e40af">Instance A</text>
+  <text x="140" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#1d4ed8">WeChat auto-reply</text>
+  <text x="140" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Fixed plugin set</text>
+  <text x="140" y="202" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Own DSH_HOME</text>
+
+  <rect x="260" y="112" width="200" height="108" rx="8" fill="#fff7ed" stroke="#fb923c"/>
+  <text x="360" y="138" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#c2410c">Instance B</text>
+  <text x="360" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#ea580c">Shopping helper</text>
+  <text x="360" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Fixed plugin set</text>
+  <text x="360" y="202" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Own DSH_HOME</text>
+
+  <rect x="480" y="112" width="200" height="108" rx="8" fill="#ecfdf5" stroke="#34d399"/>
+  <text x="580" y="138" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#047857">Instance C</text>
+  <text x="580" y="160" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#059669">Coding</text>
+  <text x="580" y="182" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#64748b">Fixed plugin set</text>
+  <text x="580" y="202" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Own DSH_HOME</text>
+
+  <rect x="24" y="256" width="672" height="28" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="360" y="275" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">Need parallel ’ open side by side · Ship it ’ export .dshpack · Isolated processes</text>
+</svg>

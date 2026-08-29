@@ -1,32 +1,54 @@
 # DSHHelper User Guide
 
-[中文](user-guide.zh-CN.md) · [Back to README](../README.md)
+[中文](user-guide.zh-CN.md) · [Back to README](../README.en.md)
 
-![Overview](assets/en/hero-overview.svg)
-
-**DSHHelper** runs multiple **isolated** DeepSeek Harness (dsh) workspaces on one computer. It bundles Node.js and dsh, supports **quad-pane layouts**, and lets you ship configured environments as **`.dshpack`** packages.
-
-> This guide is for end users. The public repository provides documentation and installers only — no source code.
+For people who already have an installer: install, multi-instance, and package import/export. UI labels match this guide.
 
 ## Contents
 
-1. [Download & install](#download--install)
-2. [First run](#first-run)
-3. [Multi-instance & quad-pane](#multi-instance--quad-pane)
-4. [Appearance (light / dark)](#appearance-light--dark)
+1. [Concepts](#concepts)
+2. [Install](#install)
+3. [First run](#first-run)
+4. [Workspaces](#workspaces)
 5. [Packages (.dshpack)](#packages-dshpack)
-6. [Data directory](#data-directory)
-7. [FAQ](#faq)
-8. [Feedback & privacy](#feedback--privacy)
+6. [Data, migrate, uninstall](#data-migrate-uninstall)
+7. [Settings reference](#settings-reference)
+8. [Troubleshooting](#troubleshooting)
 
 ---
 
-## Download & install
+## Concepts
 
-Installers are on [GitHub Releases](https://github.com/x102201/deepseek-harness-helper/releases). Use the version embedded in the file name.
+| Term | Meaning |
+|------|---------|
+| **Instance** | One isolated DeepSeek Harness workspace: own process, port, and data (`DSH_HOME`) |
+| **Runtime** | The Node.js + dsh version for that instance; downloaded to a local cache, then materialized into the instance |
+| **Package (.dshpack)** | An export of a tuned instance; import restores an interactive workspace on the current OS |
+| **Agent preset** | A full capability composition inside dsh (tools / persona); still managed in the instance’s dsh UI |
 
-| Platform | Example file name |
-|----------|-------------------|
+**One instance = one `DSH_HOME` = one fixed plugin set.** Split directed tasks across instances so they do not trampoline in a single workspace. Plugin install and Agent presets stay in the **dsh web UI**; DSHHelper creates, runs, splits panes, and ships packages.
+
+![DSHHelper model](assets/en/helper-model.svg)
+
+---
+
+## Install
+
+Installers are on [GitHub Releases](https://github.com/x102201/deepseek-harness-helper/releases). The version is embedded in the file name.
+
+### System requirements
+
+| Platform | Requirement |
+|----------|-------------|
+| Windows | 10+ (x64 / arm64) |
+| macOS | 10.15+ |
+| Linux | Mainstream distros (glibc + WebKit2GTK) |
+| Disk | First run downloads runtime; reserve several GB for cache and instances |
+
+### File name examples
+
+| Platform | Example |
+|----------|---------|
 | Windows x64 | `DSHHelper_0.1.1_windows_x64-setup.exe` |
 | Windows arm64 | `DSHHelper_0.1.1_windows_arm64-setup.exe` |
 | macOS | `DSHHelper_0.1.1_macos_arm64.dmg` |
@@ -34,66 +56,69 @@ Installers are on [GitHub Releases](https://github.com/x102201/deepseek-harness-
 
 ### Windows
 
-1. Download the `-setup.exe` for your architecture
+1. Download the `-setup.exe` for your architecture from Releases
 2. Run the installer
 3. Launch **DSHHelper** from the Start menu or desktop shortcut
 
 ### macOS
 
 1. Open the `.dmg` and drag **DSHHelper** into Applications
-2. If Gatekeeper blocks the app: right-click → **Open**, or allow it under **System Settings → Privacy & Security**
+2. If Gatekeeper blocks it: right-click → **Open**, or allow under System Settings → Privacy & Security
 
 > macOS builds are not notarized yet; this is expected.
 
 ### Linux
 
-- **Debian / Ubuntu**: `sudo dpkg -i DSHHelper_*_linux_amd64.deb`
-- **AppImage**: `chmod +x DSHHelper_*.AppImage`, then run it
+- **Debian / Ubuntu**: `sudo dpkg -i DSHHelper_*_linux_amd64.deb` (arm64 likewise)
+- **AppImage**: `chmod +x DSHHelper_*.AppImage`, then run
+
+The installer is small and does **not** ship full runtime binaries. The first use downloads Node.js and DeepSeek Harness from the runtime manifest.
 
 ---
 
 ## First run
 
-On launch you’ll see the **first-run wizard**: welcome → data directory & instance name → download runtime and create the first instance.
+On launch you get the **first-run wizard**:
+
+1. **Welcome** — multi-instance and packages
+2. **Data directory & instance** — root path, first instance name, runtime version
+3. **Install & create** — download runtime and create the first instance
 
 ![First-run wizard](assets/en/screenshot-wizard.png)
 
-*If the image is marked as an illustration, replace it with a real capture from your machine.*
+Default data directory: **`.dshHelper`** under your user home (Windows: `%USERPROFILE%\.dshHelper`). Environments, cache, imports, settings, and logs all live under that root.
 
-The default **data directory** is `~/.dshHelper` (on Windows: `%USERPROFILE%\.dshHelper`). It stores instances, cache, imports, settings, and logs.
-
-When the wizard finishes, your first instance appears in the sidebar. Double-click to open its workbench tab.
+When the wizard finishes, the first instance appears in the sidebar. Double-click to open its workbench.
 
 ---
 
-## Multi-instance & quad-pane
+## Workspaces
 
-DSHHelper’s main value is **several dsh environments in one window**, each with its own process and data.
+Create an instance for each directed task, and **install only that task’s plugins inside that instance’s dsh UI**.
 
 ### Basics
 
-1. Use **New instance** in the sidebar
-2. Double-click an instance or drag it into the work area to open a tab
-3. Drag a tab to a **window edge** to split panes; drop into another pane to **merge**
-4. A common layout is **2×2 quad-pane**: four instances in the top-left, top-right, bottom-left, and bottom-right corners
+1. Sidebar → **New instance**
+2. Start the instance if needed → **double-click to open the workbench** (or drag into the work area)
+3. Drag a tab to a **window edge** to split; drop into another pane to **merge**
+4. A common layout is a **2×2 quad-pane**
 
 ![Quad-pane — light](assets/en/screenshot-main-light.png)
 
-![Quad-pane — dark](assets/en/screenshot-main-dark.png)
+### Startup phases
 
-Each instance runs its own DeepSeek Harness process. Startup phases are shown in the sidebar and workbench (process → dependencies → port ready).
+Progress shows in the sidebar or workbench:
 
----
+1. Start process  
+2. Initialize runtime (first launch of a version often takes **1–3 minutes** for dependencies)  
+3. Wait until the port is ready  
 
-## Appearance (light / dark)
+Each instance has its own DeepSeek Harness process and port, and does not share a data directory.
 
-Go to **Settings → General → Appearance**:
+### Stop and delete
 
-- **Light**
-- **Dark**
-- **Follow system**
-
-This affects the **DSHHelper shell** (sidebar, tabs, settings) only — **not** the theme inside each instance’s DeepSeek Harness web UI.
+- Closing a tab follows **Settings → when closing a tab** (stop instance / keep running)
+- **Details** on an instance can delete it (irreversible; removes that instance’s data)
 
 ---
 
@@ -101,70 +126,91 @@ This affects the **DSHHelper shell** (sidebar, tabs, settings) only — **not** 
 
 ![Package flow](assets/en/dshpack-flow.svg)
 
-A **`.dshpack`** file packages presets, patches, settings, and related configuration so you can distribute a ready-to-use workspace.
+A `.dshpack` ships a **tuned instance**, not a plugin shopping list. On import, DSHHelper restores the environment for the current platform (Node / dsh versions, patches, presets, settings, declared plugins).
 
-### Export
+### Importer
 
-Open an instance’s **Details** page and choose **Export package**. Follow the wizard to set license mode (public, machine-bound, password, etc.).
-
-### Import
-
-Use **Import package** in the sidebar, pick a `.dshpack` file, and complete license checks and naming.
+1. Sidebar → **Import package**, or double-click an associated `.dshpack`
+2. Read the summary (runtime, plugin count, license mode, …)
+3. Complete **trust confirmation** (patches and bundles may run code — only import sources you trust)
+4. Finish license checks (password / machine code) and name the instance
 
 ![Import dialog](assets/en/screenshot-import.png)
 
-### Security
+Under **Settings → General** you can associate `.dshpack` files so double-click opens import.
 
-- Import packages from **trusted sources** only
-- Password- or machine-bound exports are controlled by the publisher; losing license details may prevent import
+### Author / exporter
 
-You can associate `.dshpack` files with DSHHelper under **Settings → General**.
+1. Instance **Details** → **Export package**
+2. **Step 1 · Contents**: environment spec is included automatically; sessions optional; **API keys / credentials are never exported**
+3. **Step 2 · License & limits**: protection mode and limits
 
----
+| Mode | Meaning |
+|------|---------|
+| Public share | No device/password gate; fine for tests |
+| Bound device | Bind buyer machine code; only that device can import |
+| Password | Password required to import |
+| Device + password | Both; suited to formal delivery |
 
-## Data directory
+Optional limits:
 
-All user data lives under one folder:
+- **Forbid re-export** — instances from this package cannot be exported again  
+- **Imports per machine** — how many times one device may import  
 
-- Instance environments
-- Node / dsh runtime cache
-- Import staging, logs, app settings
+Buyers copy their machine code from **Settings → About → Copy machine code** and send it to you.
 
-**Settings → General** shows the current path and lets you **Change…** or **Migrate…** to a new location. Do not force-quit the app during migration.
+### Boundaries
 
-Uninstalling DSHHelper **does not remove** the data directory. Delete `.dshHelper` manually if you want a clean removal.
-
-### System requirements (reference)
-
-- Windows 10+
-- macOS 11+
-- Mainstream Linux (glibc)
-- Disk: first runtime download depends on network; reserve several GB for cache and instances
-
----
-
-## FAQ
-
-**How does this relate to the official DeepSeek Harness CLI?**  
-DSHHelper manages multiple local dsh runtimes and instances for desktop multi-instance and packaging; inside each tab you still use DeepSeek Harness.
-
-**Why is the first start slow?**  
-The first launch of a version installs dependencies inside the instance (often 1–3 minutes). Later starts are faster.
-
-**macOS “unidentified developer” warning?**  
-See the macOS install section — use right-click **Open** or allow in System Settings.
-
-**Large Linux AppImage?**  
-AppImages bundle dependencies; they are larger than `.deb` packages by design.
-
-**Can I disable usage statistics?**  
-The current build does not expose a toggle. Anonymous aggregates (duration, instance/package counts) are collected to improve the product — no paths or instance names.
+- There is no in-app store; payment and delivery are between you and the buyer
+- Licensing limits misuse; password and machine binding are the main access controls
+- Changing the motherboard changes the machine code; bound packages may need re-authorization
+- VM clones that share board identity may share a machine code
 
 ---
 
-## Feedback & privacy
+## Data, migrate, uninstall
 
-- **Issues**: [GitHub Issues](https://github.com/x102201/deepseek-harness-helper/issues)
-- **In-app**: Settings → About → Feedback
+All user data lives under one root:
 
-**Repository notice**: this public repo ships documentation and Release installers only, not application source code.
+| Path | Contents |
+|------|----------|
+| `environments/` | Instance environments |
+| `cache/` | Runtime download cache |
+| `imports/` | Import staging and import ledger |
+| `logs/` | Logs |
+| `settings.json` | App settings |
+
+**Settings → General** shows the path and offers **Change…** / **Migrate…**. Migration stops all instances first; do not force-quit during migration.
+
+Uninstalling DSHHelper **does not** remove the data directory. Delete `.dshHelper` manually for a clean wipe.
+
+---
+
+## Settings reference
+
+| Item | Where / notes |
+|------|----------------|
+| Appearance | Settings → General (light / dark / system); shell only, not pages inside instances |
+| Associate .dshpack | Settings → General; double-click opens import |
+| On closing main window | Stop all / ask / keep running (often with tray) |
+| On closing a tab | Stop instance / keep running |
+| Machine code | Settings → About → Copy machine code; for device-bound packages |
+| Terminal | On a running instance; PATH / `DSH_HOME` apply to that session only |
+| Data directory | Change or migrate the root |
+
+---
+
+## Troubleshooting
+
+| Symptom | What to do |
+|---------|------------|
+| First start of a version is slow | Expected: dependency install often 1–3 minutes; later starts are faster |
+| Start failed / unclean exit | Check instance Details logs; crash recovery reconciles leftover processes and ports |
+| macOS “unidentified developer” | Right-click → Open, or allow in System Settings; see [Install · macOS](#macos) |
+| Machine code mismatch (E-20) | Confirm the export bound this device’s code; after a board change, re-authorize |
+| Cannot export again (E-23) | Instance came from a forbid-re-export package; expected |
+| Trust step blocked | You must confirm trust; only import packages you accept |
+| Runtime damaged | Details → rebuild runtime from cache (keeps workspace and session data) |
+| Large Linux AppImage | AppImages bundle deps; larger than `.deb` by design |
+
+If you are still stuck, open a [GitHub Issue](https://github.com/x102201/deepseek-harness-helper/issues) or use **Settings → About → Feedback** in the app.

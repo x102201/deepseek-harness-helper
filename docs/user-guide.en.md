@@ -117,7 +117,7 @@ Progress shows in the sidebar or workbench:
 
 Each instance has its own DeepSeek Harness process and port, and does not share a data directory.
 
-Treat each instance as a **dedicated digital employee** (support / coding / testing). To grind several of them against **the same deliverable**, sit them **on one computer**, pointed at the **same project folder**. Toolboxes stay isolated, files are shared; you dispatch from the split panes. One dsh per extra PC is a private office each — it wastes machines and hides the rest of the board. You do the handoff — they're side by side, so a glance is enough. DSHHelper does not modify upstream dsh; it only puts their desks on one table.
+Treat each instance as a **dedicated digital employee** (support / coding / testing). To grind several of them against **the same deliverable**, sit them **on one computer**, pointed at the **same project folder**. Toolboxes stay isolated, files are shared; you dispatch from the split panes. One dsh per extra PC is a private office each — it wastes machines and hides the rest of the board.
 
 ![Three digital employees: one desk vs a room each](assets/en/collab-model.svg)
 

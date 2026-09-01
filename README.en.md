@@ -47,8 +47,6 @@ Sit them on one machine: **three instances share one project directory**; toolbo
 
 This is not three unrelated windows side by side. It is three digital employees at one desk grinding **the same release**.
 
-You do the handoff yourself — glance left, tell the one on the right. They're sitting next to you, so it's almost nothing. DSHHelper does not modify upstream dsh: the digital employees stay stock; Helper only puts their desks on one table.
-
 ![Three digital employees: one desk vs a room each](docs/assets/en/collab-model.svg)
 
 ---

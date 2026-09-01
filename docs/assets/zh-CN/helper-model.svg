@@ -26,5 +26,5 @@
   <text x="588" y="172" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#64748b">独立 DSH_HOME</text>
   <text x="588" y="194" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#94a3b8">只装测试相关插件</text>
 
-  <text x="360" y="260" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">三套 dsh 并排跑 · 互不踩踏 · 需要几个就新建几个</text>
+  <text x="360" y="260" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">三套 dsh 并行 · 互不冲突 · 需要几个就新建几个</text>
 </svg>

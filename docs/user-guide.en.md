@@ -26,7 +26,7 @@ For people who already have an installer: install, multi-instance, and package i
 | **Package (.dshpack)** | An export of a tuned instance; import restores an interactive workspace on the current OS |
 | **Agent preset** | A full capability composition inside dsh (tools / persona); still managed in the instance’s dsh UI |
 
-**One instance = one `DSH_HOME` = one fixed plugin set.** Split directed tasks across instances so they do not trampoline in a single workspace. Plugin install and Agent presets stay in the **dsh web UI**; DSHHelper creates, runs, splits panes, and ships packages.
+**One instance = one `DSH_HOME` = one fixed plugin set.** Split directed tasks across instances so they do not conflict in a single workspace. Plugin install and Agent presets stay in the **dsh web UI**; DSHHelper creates, runs, splits panes, and ships packages.
 
 ![DSHHelper model](assets/en/helper-model.svg)
 
@@ -117,9 +117,9 @@ Progress shows in the sidebar or workbench:
 
 Each instance has its own DeepSeek Harness process and port, and does not share a data directory.
 
-Treat each instance as a **dedicated digital employee** (support / coding / testing). To grind several of them against **the same deliverable**, sit them **on one computer**, pointed at the **same project folder**. Toolboxes stay isolated, files are shared; you dispatch from the split panes. One dsh per extra PC is a private office each — it wastes machines and hides the rest of the board.
+Treat each instance as a **dedicated instance** (support / coding / testing). To advance them against **the same delivery**, run them **on one computer**, in one workspace, pointed at the **same project folder**. Plugins stay isolated, files are shared; dispatch from the split panes. One dsh per extra PC is one instance per machine — it costs hardware and hides the rest of the workspace.
 
-![Three digital employees: one desk vs a room each](assets/en/collab-model.svg)
+![Dedicated instances: one workspace vs one instance per machine](assets/en/collab-model.svg)
 
 ### Stop and delete
 
@@ -132,7 +132,7 @@ Treat each instance as a **dedicated digital employee** (support / coding / test
 
 ![Package flow](assets/en/dshpack-flow.svg)
 
-A `.dshpack` ships a **tuned instance**, not a plugin shopping list. On import, DSHHelper restores the environment for the current platform (Node / dsh versions, patches, presets, settings, declared plugins). One package is one instance; tune several roles, export several packs. Import does not restore the split-pane layout.
+A `.dshpack` ships a **configured instance**, not a plugin shopping list. On import, DSHHelper restores the environment for the current platform (Node / dsh versions, patches, presets, settings, declared plugins). One package is one instance; configure several dedicated instances, export several packs. Import does not restore the split-pane layout.
 
 ### Importer
 
@@ -168,7 +168,7 @@ Buyers copy their machine code from **Settings → About → Copy machine code**
 ### Boundaries
 
 - There is no in-app store; payment and delivery are between you and the buyer
-- One package is one instance; export each role separately. Split-pane layout is not included
+- One package is one instance; export each dedicated instance separately. Split-pane layout is not included
 - Licensing limits misuse; password and machine binding are the main access controls
 - Changing the motherboard changes the machine code; bound packages may need re-authorization
 - VM clones that share board identity may share a machine code

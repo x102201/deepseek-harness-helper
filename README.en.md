@@ -37,21 +37,25 @@ Support on the left, coding on the right, tests below — open as many as you ne
 
 ---
 
-## 2. Collaborate: after you split, you still ship one thing
+## 2. Collaborate: three dedicated digital employees, one desk
 
-Support, development, and testing can each be a dsh, but the deliverable is often the same: one project, one version to ship.
+**Each dsh is a dedicated digital employee:** support only takes the desk, coding only touches the repo, testing only runs the checklist. Plugins are their toolbox, so they must be split — that was section 1.
 
-The move is simple: **three instances share one project directory**; plugins stay apart, files are shared. You dispatch from the split panes — change a chunk on the left, update the same files on the right, check the list below.
+But the three of them still ship the same job. Parking each on a separate computer is three private offices: you burn three machines, still copy files around, and still cannot see the whole board. **Digital employees need adjacent desks, not a room each.**
 
-This is not three unrelated windows side by side. It is three pipelines in one window grinding **the same release**.
+Sit them on one machine: **three instances share one project directory**; toolboxes stay apart, files are shared. You dispatch from the split panes — change a chunk on the left, update the same files on the right, check the list below.
 
-Instances do not pass messages to each other today. Dispatch is still you.
+This is not three unrelated windows side by side. It is three digital employees at one desk grinding **the same release**.
+
+They do not pass messages to each other today. Dispatch is still you.
+
+![Three digital employees: one desk vs a room each](docs/assets/en/collab-model.svg)
 
 ---
 
 ## 3. Sell: tune several roles, export several packs
 
-It took days to get support, development, and testing running together — plugins, presets, scripts, who watches whom, tuned piece by piece.
+It took days to get the support, coding, and testing digital employees running together — plugins, presets, scripts, who watches whom, tuned piece by piece.
 
 Then someone wants to buy. What breaks is not “can they use it”, but that **every sale feels like rebuilding the project**:
 
@@ -59,9 +63,9 @@ Then someone wants to buy. What breaks is not “can they use it”, but that **
 2. **Cannot hand off** — a README never installs cleanly; shipping the folder invites piracy / resale
 3. **Cannot sell to many** — customer two and three need the same remote grind; **delivery time dwarfs the time you spent building**, so you cannot scale sales
 
-**`.dshpack`:** export that one tuned instance (one full dsh) as a file. They import and run. Bind machine code / password; forbid re-export — you sell a finished product, not install labor.
+**`.dshpack`:** export that one trained digital employee (one full dsh) as a file. They import and run. Bind machine code / password; forbid re-export — you sell a finished product, not install labor.
 
-Tune several roles, export several packs. One `.dshpack` is still one dsh; after import it shows up in the sidebar — they drag the split layout themselves.
+Tune several digital employees, export several packs. One `.dshpack` is still one dsh; after import it shows up in the sidebar — they drag the split layout themselves.
 
 ![Package flow](docs/assets/en/dshpack-flow.svg)
 

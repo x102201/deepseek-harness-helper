@@ -7,24 +7,24 @@
 
   <rect x="32" y="84" width="200" height="128" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
   <text x="132" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#1e40af">A = one full dsh</text>
-  <text x="132" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1d4ed8">WeChat sales desk</text>
+  <text x="132" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#1d4ed8">Support</text>
   <text x="132" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Own process · port</text>
   <text x="132" y="172" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Own DSH_HOME</text>
-  <text x="132" y="194" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Sales-desk plugins only</text>
+  <text x="132" y="194" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Support plugins only</text>
 
   <rect x="260" y="84" width="200" height="128" rx="8" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
   <text x="360" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#c2410c">B = one full dsh</text>
-  <text x="360" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#ea580c">After-sales</text>
+  <text x="360" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#ea580c">Coding</text>
   <text x="360" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Own process · port</text>
   <text x="360" y="172" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Own DSH_HOME</text>
-  <text x="360" y="194" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">After-sales plugins only</text>
+  <text x="360" y="194" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Coding plugins only</text>
 
   <rect x="488" y="84" width="200" height="128" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
   <text x="588" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#047857">C = one full dsh</text>
-  <text x="588" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#059669">Coding</text>
+  <text x="588" y="130" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#059669">Testing</text>
   <text x="588" y="152" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Own process · port</text>
   <text x="588" y="172" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">Own DSH_HOME</text>
-  <text x="588" y="194" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Coding plugins only</text>
+  <text x="588" y="194" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#94a3b8">Test plugins only</text>
 
   <text x="360" y="260" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">N full dsh side by side · no crosstalk · create more anytime</text>
 </svg>

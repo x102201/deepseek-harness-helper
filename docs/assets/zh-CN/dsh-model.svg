@@ -5,9 +5,9 @@
   <rect x="180" y="52" width="360" height="120" rx="10" fill="#fff" stroke="#f87171" stroke-width="2"/>
   <text x="360" y="78" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="700" fill="#b91c1c">一套 dsh · 一个工作空间</text>
   <rect x="200" y="92" width="56" height="24" rx="4" fill="#fef2f2" stroke="#fca5a5"/>
-  <text x="228" y="108" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#b91c1c">微信</text>
+  <text x="228" y="108" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#b91c1c">客服</text>
   <rect x="264" y="92" width="56" height="24" rx="4" fill="#fff7ed" stroke="#fdba74"/>
-  <text x="292" y="108" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#c2410c">卖货</text>
+  <text x="292" y="108" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#c2410c">测试</text>
   <rect x="328" y="92" width="56" height="24" rx="4" fill="#eff6ff" stroke="#93c5fd"/>
   <text x="356" y="108" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="10" fill="#1d4ed8">编码</text>
   <rect x="392" y="92" width="56" height="24" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>

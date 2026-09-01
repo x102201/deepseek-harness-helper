@@ -117,6 +117,8 @@ Progress shows in the sidebar or workbench:
 
 Each instance has its own DeepSeek Harness process and port, and does not share a data directory.
 
+To grind several roles against **the same deliverable**, point those instances at the **same project folder**. Plugins stay isolated, files are shared; you dispatch from the split panes. Instances do not pass messages to each other.
+
 ### Stop and delete
 
 - Closing a tab follows **Settings → when closing a tab** (stop instance / keep running)
@@ -128,7 +130,7 @@ Each instance has its own DeepSeek Harness process and port, and does not share 
 
 ![Package flow](assets/en/dshpack-flow.svg)
 
-A `.dshpack` ships a **tuned instance**, not a plugin shopping list. On import, DSHHelper restores the environment for the current platform (Node / dsh versions, patches, presets, settings, declared plugins).
+A `.dshpack` ships a **tuned instance**, not a plugin shopping list. On import, DSHHelper restores the environment for the current platform (Node / dsh versions, patches, presets, settings, declared plugins). One package is one instance; tune several roles, export several packs. Import does not restore the split-pane layout.
 
 ### Importer
 
@@ -164,6 +166,7 @@ Buyers copy their machine code from **Settings → About → Copy machine code**
 ### Boundaries
 
 - There is no in-app store; payment and delivery are between you and the buyer
+- One package is one instance; export each role separately. Split-pane layout is not included
 - Licensing limits misuse; password and machine binding are the main access controls
 - Changing the motherboard changes the machine code; bound packages may need re-authorization
 - VM clones that share board identity may share a machine code

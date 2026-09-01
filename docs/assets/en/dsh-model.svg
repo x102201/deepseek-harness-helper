@@ -5,9 +5,9 @@
   <rect x="180" y="52" width="360" height="120" rx="10" fill="#fff" stroke="#f87171" stroke-width="2"/>
   <text x="360" y="78" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#b91c1c">One dsh · one workspace</text>
   <rect x="200" y="92" width="64" height="24" rx="4" fill="#fef2f2" stroke="#fca5a5"/>
-  <text x="232" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#b91c1c">WeChat</text>
+  <text x="232" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#b91c1c">Support</text>
   <rect x="272" y="92" width="64" height="24" rx="4" fill="#fff7ed" stroke="#fdba74"/>
-  <text x="304" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c2410c">Sales</text>
+  <text x="304" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c2410c">Tests</text>
   <rect x="344" y="92" width="64" height="24" rx="4" fill="#eff6ff" stroke="#93c5fd"/>
   <text x="376" y="108" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#1d4ed8">Code</text>
   <rect x="416" y="92" width="48" height="24" rx="4" fill="#f1f5f9" stroke="#cbd5e1"/>
